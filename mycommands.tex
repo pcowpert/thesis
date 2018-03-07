@@ -1,4 +1,4 @@
-
+% New Commands
 \newcommand{\tc}[2][red]{\textcolor{#1}{\emph{\textbf{#2}}}}
 \newcommand{\ksmag}{\emph{Ks}~magnitudes }
 \newcommand{\jmag}{\emph{J}~magnitudes }
@@ -30,6 +30,7 @@
 \newcommand{\HST}{{\it HST}}
 \newcommand{\hubble}{{\it HST}}
 \newcommand{\spitzer}{{\it Spitzer}}
+\newcommand{\fermi}{{\it Fermi}}
 \newcommand{\zeroth}{$0^{\rm th}$}
 \newcommand{\first}{$1^{st}$}
 \newcommand{\second}{$2^{nd}$}
@@ -53,7 +54,21 @@
 \newcommand{\Mej}{M_{\rm ej}}
 \newcommand{\vej}{v_{\rm ej}}
 \newcommand{\apx}{\ensuremath{\sim}}
+
+% Alternate Itemize
 \newcommand{\outline}[1]{
 \todo{\begin{itemize}
 #1 
 \end{itemize}}}
+
+% AutoRef Stuff
+\def\sectionautorefname{Section}
+\def\subsectionautorefname{Section}
+\def\subsubsectionautorefname{Section}
+
+\renewcommand*{\sectionautorefname}{Section} %for \autoref
+\renewcommand*{\subsectionautorefname}{Section} %for \autoref
+
+% Citation Alias
+\defcitealias{LP98}{LP98}
+\defcitealias{CowpBerger15}{CB15}
