@@ -1,4 +1,3 @@
-
 %% $Log: apj.bst,v $
 %%
 %% Revision 1.6  2009/05/18 15:13:02  alberto
