@@ -63,7 +63,7 @@ detected in INTEGRAL $\gamma$-ray data \citep{Savchenko+16} and was also
 disputed in a re-analysis of the GBM data \citep{Greiner+16}.
 
 A second high-significance GW event, designated GW151226, was
-discovered by LIGO on 2015 December 26 at 03:38:53 UT \citep{abb+16c}.
+discovered by LIGO on 2015 December 26 at 03:38:53 UT \citep{LIGOGW151226}.
 This event was also due to the inspiral and merger of a BBH system, consisting
 of $14.2^{+8.3}_{-3.7}$~M$_\odot$ and $7.5^{+2.3}_{-2.3}$~M$_\odot$ black holes at a luminosity
 distance of $d_L = 440^{+180}_{-190}$~Mpc \citep{LIGOGW151226}.
@@ -79,6 +79,7 @@ cosmological calculations assuming $H_0 = 67.8$~km  s$^{-1}$ Mpc$^{-1}$,
 $\Omega_{\lambda} = 0.69$, and $\Omega_m = 0.31$ \citep{Planck2016}.
  Magnitudes are reported in the AB system.
 
+\clearpage
 \section{Observations and Data Reduction}
 \label{sec:ch4_obs}
 
@@ -98,28 +99,6 @@ after our DECam observations had been concluded. The {\tt LALInference} sky map
 is slightly narrower than the sky map from {\tt BAYESTAR} with 50\% and 90\% contours
 of 362 deg$^2$ and 1238 deg$^2$, respectively.
 
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.75 \textwidth]{./figs/chapter4/fig1.pdf}
-\caption{
-Sky region covered by our DECam observations (red
-hexagons) relative to the 50\% and 90\% probability regions
-from the {\tt BAYESTAR} (cyan contours) and {\tt LALInference}
-(white contours) localization of GW151226.
-The background color indicates the estimated $5\sigma$
-point-source limiting magnitude for a 90~s $i$-band exposure
-as a function of sky position for the first night of our DECam
-observations. The variation in the limiting magnitude is largely
-driven by the dust extinction and airmass at that position.
-The dark grey regions indicate sky positions that
-were unobservable due to the telescope pointing limits.  The yellow contour
-indicates the region of sky covered by the Dark Energy Survey
-(DES). The total effective area for the 12 DECam pointings is 28.8
-deg$^2$, corresponding to 3\%~(2\%) of the probability in the
-{\tt BAYESTAR}~({\tt LALInference}) sky map.}
-\label{fig:ch4_obs}
-\end{figure}
-
 We initiated follow-up observations with DECam on 2015 December 28 UT,
 two days after the GW detection and 10 hours after distribution of the {\tt BAYESTAR}
 sky map. DECam is a wide-field optical imager with a 3 deg$^2$ field of view
@@ -136,45 +115,16 @@ epoch was obtained 2--3 days after the initial LIGO trigger (2015
 December 28--29 UT), the second epoch was at 6 days (2016 January 1
 UT), the third epoch was at 13--14 days (2016 January 8--9), and the
 fourth epoch was at 23--24 days (2016 January 18--19). A summary of
-the observations is provided in \cref{datatable} and a visual
+the observations is provided in \cref{ch4_datatable} and a visual
 representation of the sky region is shown in
 \Cref{fig:ch4_obs}.
-
-We processed the data using an implementation of the {\tt photpipe}
-pipeline modified for DECam images. {\tt Photpipe} is a
-pipeline used in several time-domain surveys (e.g.,
-SuperMACHO, ESSENCE, Pan-STARRS1; see \citealt{Rest+05,Garg+07,Miknaitis+07,Rest+14}), designed to perform
-single-epoch image processing including image calibration (e.g., bias
-subtraction, cross-talk corrections, flat-fielding), astrometric
-calibration, image coaddition, and photometric calibration.
-Additionally, {\tt photpipe} performs difference imaging using {\tt
-  hotpants} \citep{Alard2000,Becker2015} to compute a spatially varying convolution kernel,
-followed by photometry on the difference images using an
-implementation of {\tt DoPhot} optimized for point spread function (PSF) photometry on
-difference images \citep{Schechter+93}. Lastly, we
-use {\tt photpipe} to perform initial candidate searches by
-specifying a required number of spatially coincident detections over a
-range of time. Once candidates are identified, {\tt photpipe} performs
-``forced" PSF photometry on the subtracted images at the fixed coordinates of
-an identified candidate in each available epoch.
-
-In the case of the GW151226 observations, we began with raw images
-acquired from the NOAO archive\footnote{http://archive.noao.edu/} and the
-most recent calibration files\footnote{http://www.ctio.noao.edu/noao/content/decam-calibration-files}.
-Astrometric calibration was performed relative to the Pan-STARRS1 (PS1)
-$3\pi$ survey and 2MASS $J$-band catalogs. The two $z$-band exposures
-were then coadded. Photometric calibration was performed using the
-PS1 $3\pi$ survey with appropriate calibrations between
-PS1 and DECam magnitudes \citep{Scolnic+15}. Image subtraction was performed
-using observations from the final epoch as templates. The approach
-to candidate selection is described in \cref{sec:ch4_analysis}.
 
 \begin{deluxetable}{lrccccccc}
 \tabletypesize{\footnotesize}
 \tablecolumns{9}
 \tablewidth{0pt}
 \tablecaption{Summary of DECam Observations of GW151226
-\label{datatable}}
+\label{ch4_datatable}}
 \tablehead{
 \colhead{Visit}    &
 \colhead{UT}       &
@@ -217,6 +167,60 @@ taking into account that $\approx 20\%$ of the 3
 deg$^2$ field of view of DECam is lost due to chip gaps (10\%), 3
 dead CCDs (5\%, \citealt{Diehl+14}), and masked edge pixels (5\%).}
 \end{deluxetable}
+
+\begin{figure}[t!]
+\centering
+\vspace{-60pt}
+\includegraphics[width=0.75 \textwidth]{./figs/chapter4/fig1.pdf}
+\vspace{-60pt}
+\caption{
+Sky region covered by our DECam observations (red
+hexagons) relative to the 50\% and 90\% probability regions
+from the {\tt BAYESTAR} (cyan contours) and {\tt LALInference}
+(white contours) localization of GW151226.
+The background color indicates the estimated $5\sigma$
+point-source limiting magnitude for a 90~s $i$-band exposure
+as a function of sky position for the first night of our DECam
+observations. The variation in the limiting magnitude is largely
+driven by the dust extinction and airmass at that position.
+The dark grey regions indicate sky positions that
+were unobservable due to the telescope pointing limits.  The yellow contour
+indicates the region of sky covered by the Dark Energy Survey
+(DES). The total effective area for the 12 DECam pointings is 28.8
+deg$^2$, corresponding to 3\%~(2\%) of the probability in the
+{\tt BAYESTAR}~({\tt LALInference}) sky map.}
+\label{fig:ch4_obs}
+\end{figure}
+
+We processed the data using an implementation of the {\tt photpipe}
+pipeline modified for DECam images. {\tt Photpipe} is a
+pipeline used in several time-domain surveys (e.g.,
+SuperMACHO, ESSENCE, Pan-STARRS1; see \citealt{Rest+05,Garg+07,Miknaitis+07,Rest+14}), designed to perform
+single-epoch image processing including image calibration (e.g., bias
+subtraction, cross-talk corrections, flat-fielding), astrometric
+calibration, image coaddition, and photometric calibration.
+Additionally, {\tt photpipe} performs difference imaging using {\tt
+  hotpants} \citep{Alard2000,Becker2015} to compute a spatially varying convolution kernel,
+followed by photometry on the difference images using an
+implementation of {\tt DoPhot} optimized for point spread function (PSF) photometry on
+difference images \citep{Schechter+93}. Lastly, we
+use {\tt photpipe} to perform initial candidate searches by
+specifying a required number of spatially coincident detections over a
+range of time. Once candidates are identified, {\tt photpipe} performs
+``forced" PSF photometry on the subtracted images at the fixed coordinates of
+an identified candidate in each available epoch.
+
+\clearpage
+In the case of the GW151226 observations, we began with raw images
+acquired from the NOAO archive\footnote{http://archive.noao.edu/} and the
+most recent calibration files\footnote{http://www.ctio.noao.edu/noao/content/decam-calibration-files}.
+Astrometric calibration was performed relative to the Pan-STARRS1 (PS1)
+$3\pi$ survey and 2MASS $J$-band catalogs. The two $z$-band exposures
+were then coadded. Photometric calibration was performed using the
+PS1 $3\pi$ survey with appropriate calibrations between
+PS1 and DECam magnitudes \citep{Scolnic+15}. Image subtraction was performed
+using observations from the final epoch as templates. The approach
+to candidate selection is described in \cref{sec:ch4_analysis}.
 
 Our observations achieved average $5\sigma$ point-source limiting
 magnitudes of $i\approx22.2$ and $z\approx21.9$ in the coadded single-epoch
@@ -269,6 +273,7 @@ first epoch and at least one additional $\ge 5\sigma$ $i$-band
 detection in either of the two remaining epochs (to eliminate contamination
 from asteroids). This criterion leaves a sample of 98 objects.
 
+\clearpage
 \item We require a $\ge 3\sigma$ decline in flux between the first and
 third epochs to search for significant fading\footnote{We note that this
 criterion effectively requires the detection in the first epoch to be $\gtrsim 5\sigma$
@@ -299,45 +304,32 @@ that they represent AGN variability. A third candidate is coincident with the nu
 the bright radio source PMN\,J0203+0956 ($F_\nu(365\,{\rm MHz})\approx 0.4$ Jy,
 \citealt{Douglas+96}), also suggesting AGN variability.
 
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.95\textwidth]{./figs/chapter4/fig2.pdf}
-\caption{{\it Top}: Single-epoch images of our main candidate
-from all four epochs (green circle). This is the event discovered as PS15cdi in
-the PSST about 94 d prior to GW151226. {\it Bottom}: Light
-curve data for PS15cdi from PSST $w$- and $i$-band
-observations (green squares and yellow diamonds, respectively).
-Our DECam $i$- and $z$-band data are shown as
-blue circles and red stars, respectively. The revised DECam analysis
-using pre-existing templates is shown as open symbols. Upper
-limits are indicated by triangles. The inset focuses on our
-DECam data, indicating a rapid decline in both $i$ and $z$
-bands.  We fit a power-law model to the data finding a temporal index of
-$\alpha = -0.43$ (dashed-dot line). Kilonova models from Barnes and
-Kasen \citeyearpar{BarnesKasen13} with $v_{\rm ej}=0.2c$ and $M_{\rm ej}=0.1$ M$_\odot$
-at a distance of $187$~Mpc are also shown (dashed line).}
-\label{fig:ch4_PS15cdi}
-\end{figure}
+\clearpage
+The final candidate in our search is located at RA = 01$^{\rm h}$42$^{\rm m}$16$^{\rm s}$.17 and DEC = $-$02\arcdeg13\arcmin42 6\arcsec~(J2000), with an offset of $5.8$ arcsec from the galaxy CGCG 386-030 (RA =  01$^{\rm h}$42$^{\rm m}$15$^{\rm s}$.6, DEC = $-$02\arcdeg13\arcmin38 5\arcsec; J2000), at $z = 0.041$ or $d_L \approx 187$ Mpc (6dFGS, \citealt{Jones+04,Jones+09}); see \Cref{fig:ch4_PS15cdi}. We note that this distance is inconsistent with the 90\% confidence interval for the distance to GW151226 based on the GW data \citep{LIGOGW151226}. We observe this source in a state of rapid decline with an absolute magnitude of $M_i \approx -15$~mag on 2015 December 28 and $M_i\approx -14.5$~mag on 2016 January 1, indicating a decline rate of $\approx 0.12$ mag d$^{-1}$; the decline rate in $z$-band is $\approx 0.10$ mag d$^{-1}$. Additionally, the source exhibits a red $i-z$ color of $0.3$ mag.
 
-The final candidate in our search is located at RA = 01$^{\rm h}$42$^{\rm m}$16$^{\rm s}$.17
-and DEC = $-$02\arcdeg13\arcmin42 6\arcsec~(J2000), with an offset of $5.8$ arcsec from the galaxy
-CGCG 386-030 (RA =  01$^{\rm h}$42$^{\rm m}$15$^{\rm s}$.6, DEC = $-$02\arcdeg13\arcmin38
-5\arcsec; J2000), at $z = 0.041$ or $d_L \approx 187$ Mpc (6dFGS, \citealt{Jones+04,Jones+09}); see
-\Cref{fig:ch4_PS15cdi}. We note that this distance is inconsistent with the 90\% confidence interval for
-the distance to GW151226 based on the GW data \citep{LIGOGW151226}. We observe this source in a state of rapid decline with an
-absolute magnitude of $M_i \approx -15$~mag on 2015 December 28 and $M_i\approx -14.5$~mag on 2016
-January 1, indicating a decline rate of $\approx 0.12$ mag d$^{-1}$; the decline rate in $z$-band is
-$\approx 0.10$ mag d$^{-1}$. Additionally, the source exhibits a red $i-z$ color of $0.3$ mag. We
-fit these data to a power-law model typical for GRB afterglows $(F_\nu \propto \nu^{\beta} t^{\alpha})$
-and find a temporal index of $\alpha = -0.43\pm0.12$ and a spectral index of $\beta = -1.8\pm0.8$,
-both of which differ from the expected values for GRB afterglows ($\alpha \approx -1$,
-$\beta \approx -0.75$, \citealt{Sari+98}). Additionally, we compare our observations to a
-kilonova model with ejecta parameters of $v_{\rm ej} = 0.2$c and $M_{\rm ej} = 0.1$ M$_\odot$
- \citep{BarnesKasen13}. We find that the timescale of the transient agrees with those expected for kilonovae,
- but the color is bluer than the expected value of $i-z \approx 1$~mag \citep{BarnesKasen13}. Thus, the properties
- of this transient differ from those of GRB afterglows or kilonovae. The observations
- and models are shown in \Cref{fig:ch4_PS15cdi}.
+We fit these data to a power-law model typical for GRB afterglows $(F_\nu \propto \nu^{\beta} t^{\alpha})$ and find a temporal index of $\alpha = -0.43\pm0.12$ and a spectral index of $\beta = -1.8\pm0.8$, both of which differ from the expected values for GRB afterglows ($\alpha \approx -1$, $\beta \approx -0.75$, \citealt{Sari+98}). Additionally, we compare our observations to a kilonova model with ejecta parameters of $v_{\rm ej} = 0.2$c and $M_{\rm ej} = 0.1$ M$_\odot$ \citep{BarnesKasen13}. We find that the timescale of the transient agrees with those expected for kilonovae, but the color is bluer than the expected value of $i-z \approx 1$~mag \citep{BarnesKasen13}. Thus, the properties of this transient differ from those of GRB afterglows or kilonovae. The observations and models are shown in \Cref{fig:ch4_PS15cdi}.
 
+ \begin{figure}[t!]
+ \centering
+ \includegraphics[width=0.9\textwidth]{./figs/chapter4/fig2.pdf}
+ \caption{\singlespace{\it Top}: Single-epoch images of our main candidate
+ from all four epochs (green circle). This is the event discovered as PS15cdi in
+ the PSST about 94 d prior to GW151226. {\it Bottom}: Light
+ curve data for PS15cdi from PSST $w$- and $i$-band
+ observations (green squares and yellow diamonds, respectively).
+ Our DECam $i$- and $z$-band data are shown as
+ blue circles and red stars, respectively. The revised DECam analysis
+ using pre-existing templates is shown as open symbols. Upper
+ limits are indicated by triangles. The inset focuses on our
+ DECam data, indicating a rapid decline in both $i$ and $z$
+ bands.  We fit a power-law model to the data finding a temporal index of
+ $\alpha = -0.43$ (dashed-dot line). Kilonova models from Barnes and
+ Kasen \citeyearpar{BarnesKasen13} with $v_{\rm ej}=0.2c$ and $M_{\rm ej}=0.1$ M$_\odot$
+ at a distance of $187$~Mpc are also shown (dashed line).}
+ \label{fig:ch4_PS15cdi}
+ \end{figure}
+
+\clearpage
 This source was previously detected as PS15cdi on 2015 September 23 by the Pan-STARRS
 Survey for Transients (PSST\footnote{\url{http://psweb.mp.qub.ac.uk/ps1threepi/psdb/candidate/1014216170021342600/}},
 \citealt{Huber+15}); see \Cref{fig:ch4_PS15cdi}. The absolute $i$-band
@@ -357,6 +349,7 @@ in our original template image, leading to revised first epoch absolute magnitud
 $M_z \approx -16$~mag, and a decline rate between the first and fourth epochs of 0.04~mag d$^{-1}$, in both
 $i$- and $z$-bands. The transient still exhibits a red $i-z$ colors of $\approx 0.4$~mag across all four epochs.
 
+\clearpage
 Clearly, we can rule out this candidate based on the PSST detections prior to
 GW151226, but without this crucial information this candidate
 would have been a credible optical counterpart based on its light curve behavior and distance.
