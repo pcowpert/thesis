@@ -78,7 +78,6 @@ Antlia 21 & 10:36:36.0  & $-$27:31:04 \\
 \enddata
 \tablecomments{Central J2000 coordinates for all 21 fields used in this analysis.}
 \end{deluxetable}
-\doublespace
 
 \begin{deluxetable}{lcrcccccc}
 \tabletypesize{\footnotesize}
@@ -146,6 +145,7 @@ $z$-band & 0.87 & 1.09 & 22.1 \\
 template epoch. All data were taken on 2013 March 22 UT. Values
 are computed as for \cref{tab:ch3_search}}
 \end{deluxetable}
+\doublespace
 
 \clearpage
 We processed the data using {\tt photpipe}, an image processing pipeline used by several previous time domain surveys (see e.g., \citealt{Rest+05,Rest+14}) to perform single-epoch image processing, image subtraction, and candidate identification. The single epoch processing began with the raw images and appropriate calibration files obtained from the NOAO archive\footnote{\url{http://archive.noao.edu/}} and initial image reduction (e.g., bias subtraction, cross-talk corrections, flat-fielding). We performed astrometric calibration relative to the 2MASS $J$-band point-source catalog. Search and template images were deprojected into a tangential plane and pairs of $i$- and $z$- band images from a single epoch were coadded using {\tt SWARP} \citep{Bertin+02}.
@@ -229,7 +229,7 @@ We next search for transients that appear near to a galaxy, but like those in Gr
 \hspace*{-0.1in}
 \scalebox{1.}
 {\includegraphics[width=0.9\textwidth]{./figs/chapter3/f1.pdf}}
-\caption{Offset distribution, with one pixel bins, for sources in Group 2 after visual rejection of image subtraction artifacts. Half (24 of 48) of the sources exhibit offsets smaller than 1 pixel ($0.27\arcsec$), indicating a likely AGN variability origin.}
+\caption{\singlespace Offset distribution, with one pixel bins, for sources in Group 2 after visual rejection of image subtraction artifacts. Half (24 of 48) of the sources exhibit offsets smaller than 1 pixel ($0.27\arcsec$), indicating a likely AGN variability origin.}
 \label{fig:ch3_offset_hist}
 \end{center}
 \end{figure}
@@ -246,7 +246,7 @@ We are also interested in those candidates that have a coincident point source c
 \hspace*{-0.1in}
 \scalebox{1.}
 {\includegraphics[width=\textwidth]{./figs/chapter3/f2alt.pdf}}
-\caption{{\it Left:} $r-i$ vs. $i-z$ color-color diagram for the template counterparts identified in Groups 3 (orange stars; \cref{sec:ch3_group3}) and 4 (blue circles; \cref{sec:ch3_group4}). The black contours indicate the stellar locus in our images. We find that the majority of sources are consistent with the stellar locus indicating a variable star origin.
+\caption{\singlespace {\it Left:} $r-i$ vs. $i-z$ color-color diagram for the template counterparts identified in Groups 3 (orange stars; \cref{sec:ch3_group3}) and 4 (blue circles; \cref{sec:ch3_group4}). The black contours indicate the stellar locus in our images. We find that the majority of sources are consistent with the stellar locus indicating a variable star origin.
 {\it Middle:} Same as top, but only showing those 14 sources that do not have a match in the Gaia DR1 catalog. The majority of sources are still consistent with the stellar locus, indicating that they are stellar but simply too faint to appear in the Gaia catalog.
 {\it Bottom:} Distribution of $r$-band magnitudes for sources in Groups 3 and 4. The solid lines indicate sources that have a counterpart in the Gaia DR1 catalog, while dashed lines indicate sources that do not have a catalog match.}
 \label{fig:ch3_color_color}
@@ -288,7 +288,7 @@ We now study the $i-z$ colors of the 48 potential contaminants to identify sourc
 \hspace*{-0.1in}
 \scalebox{1.}
 {\includegraphics[width=\textwidth]{./figs/chapter3/f3.pdf}}
-\caption{{\it Left:} $i-z$ color distribution for the 48 sources considered in this analysis. The 11 sources identified as red kilonova contaminants are plotted in orange (\cref{sec:ch3_kn_search}), while the 10 sources identified as blue kilonova contaminants are shown in blue (\cref{sec:ch3_kn_search}). The remaining 27 sources from Group 2 are plotted in grey dashed lines.
+\caption{\singlespace {\it Left:} $i-z$ color distribution for the 48 sources considered in this analysis. The 11 sources identified as red kilonova contaminants are plotted in orange (\cref{sec:ch3_kn_search}), while the 10 sources identified as blue kilonova contaminants are shown in blue (\cref{sec:ch3_kn_search}). The remaining 27 sources from Group 2 are plotted in grey dashed lines.
 {\it Right:} The number of sources recovered by performing an $i-z$ color cut on the sample of 48 sources in Group 2. The orange line gives the number of sources redder than a given $i-z$ color. The blue line indicates the number of sources bluer than a given color cut. The vertical black lines indicate our nominal cuts of $i-z < 0$~mag and $i-z > 0.5$~mag, for blue and red kilonovae, respectively. The sharp increase in the number of sources as the chosen color threshold is relaxed can be clearly seen.}
 \label{fig:ch3_color_dist_final}
 \end{center}
@@ -301,7 +301,7 @@ We find 11 sources that satisfy the color criterion for a red kilonova, of which
 \hspace*{-0.1in}
 \scalebox{1.}
 {\includegraphics[width=0.825\textwidth]{./figs/chapter3/f4.pdf}}
-\caption{Light curves for the 11 sources in our red kilonova contaminant sample, constructed from the ``forced" {\tt DoPhot} PSF photometry (blue circles: $i$-band; orange squares: $z$-band). Nuclear sources are indicated by an (N) in the ID number. The $5\sigma$ limits for non-detections are indicated by triangles.}
+\caption{\singlespace Light curves for the 11 sources in our red kilonova contaminant sample, constructed from the ``forced" {\tt DoPhot} PSF photometry (blue circles: $i$-band; orange squares: $z$-band). Nuclear sources are indicated by an (N) in the ID number. The $5\sigma$ limits for non-detections are indicated by triangles.}
 \label{fig:ch3_final_lc_red}
 \end{center}
 \vspace{0.5cm}
@@ -312,7 +312,7 @@ We find 11 sources that satisfy the color criterion for a red kilonova, of which
 \hspace*{-0.1in}
 \scalebox{1.}
 {\includegraphics[width=0.9\textwidth]{./figs/chapter3/f5.pdf}}
-\caption{Same as \Cref{fig:ch3_final_lc_red}, but for the sources in the blue kilonova contaminant sample.}
+\caption{\singlespace Same as \Cref{fig:ch3_final_lc_red}, but for the sources in the blue kilonova contaminant sample.}
 \label{fig:ch3_final_lc_blue}
 \end{center}
 \vspace{1.1cm}
@@ -323,6 +323,7 @@ We find 10 sources that have colors expected for blue kilonovae. About half of t
 
 The complete set of selections are summarized in \cref{tab:ch3_cuts_sum}. We selected subsets of red and blue kilonova contaminants with specific color cuts, but we note that the models motivating these choices have uncertainties that can affect the kilonova colors (e.g., ejecta mass and velocity, ejecta composition, uncertainties in $r$-process opacities, etc.). This makes understanding the effect of color criteria on the size of the contaminant sample crucial.
 
+\singlespace
 \begin{deluxetable}{l c c c c}
 \tabletypesize{\footnotesize}
 \tablecolumns{5}
@@ -356,6 +357,7 @@ Timescale: $\lesssim3$ hr & $\lesssim 3$ & $\lesssim 0.05$ & $\lesssim 4$ & $\le
 \enddata
 \tablecomments{Summary of selections made for our magnitude-limited final sample of 45 sources, including $1 \sigma$ errors on source counts. We give raw and efficiency corrected number of sources $(N)$ and sky rate $(\mathcal{R})$, assuming our search represents a typical region of sky. We define red and blue sources as those with $i-z > 0.5$~mag and $i-z < 0.0$~mag, respectively. We define nuclear sources as those exhibiting an offset from the nucleus of their host galaxy of $\lesssim 1$ pixel ($\lesssim 0.27\arcsec$).}
 \end{deluxetable}
+\doublespace
 
 The number of red and blue kilonova contaminants as a function of color is shown in \Cref{fig:ch3_color_dist_final}. We find that the number of sources in either sample increases significantly if the selection on $i-z$ color is relaxed. For example, if we search for red kilonova contaminants by requiring $i-z \gtrsim 0.3$~mag, the number of contaminants rises to 22, a twofold increase. Similarly, if we relax our color selection for blue kilonova to $i-z \lesssim 0.2$~mag, the number of contaminants rises to 20, again a twofold increase over the original sample.
 
@@ -406,7 +408,7 @@ In \Cref{fig:ch3_eff_1D} we plot the detection efficiency as a function of $i$-b
 \hspace*{-0.1in}
 \scalebox{1.}
 {\includegraphics[width=0.85\textwidth]{./figs/chapter3/f6.pdf}}
-\caption{\singlespace Plots of recovery efficiency as a function of various fake source injection parameters. The efficiency for the entire population of fake sources is shown as a black line while the efficiency for red kilonova and blue kilonova fake sources are shown as orange and blue lines, respectively. {\it Top Left:} Efficiency as a function of $i$-band magnitude. We note that our efficiency for red kilonova fake sources is higher than our mean efficiency, while the blue kilonova efficiency declines more rapidly compared to the red kilonova fake sources. This is due to the design of our observations, which are aimed at red sources. {\it Top Right:} Efficiency as a function of $i-z$ color. We are more sensitive to objects that are red in $i-z$ color, which drives the efficiency differences seen in the other panels. {\it Bottom Left:} Efficiency as a function of fading ($\delta m$, see text for definition). {\it Bottom Right:} Efficiency as a function of host galaxy separation. We find no dependence on separation.}
+\caption{\singlespace \singlespace Plots of recovery efficiency as a function of various fake source injection parameters. The efficiency for the entire population of fake sources is shown as a black line while the efficiency for red kilonova and blue kilonova fake sources are shown as orange and blue lines, respectively. {\it Top Left:} Efficiency as a function of $i$-band magnitude. We note that our efficiency for red kilonova fake sources is higher than our mean efficiency, while the blue kilonova efficiency declines more rapidly compared to the red kilonova fake sources. This is due to the design of our observations, which are aimed at red sources. {\it Top Right:} Efficiency as a function of $i-z$ color. We are more sensitive to objects that are red in $i-z$ color, which drives the efficiency differences seen in the other panels. {\it Bottom Left:} Efficiency as a function of fading ($\delta m$, see text for definition). {\it Bottom Right:} Efficiency as a function of host galaxy separation. We find no dependence on separation.}
 \label{fig:ch3_eff_1D}
 \end{center}
 \end{figure}
@@ -424,7 +426,7 @@ In general, the final efficiency for a given source population depends on a comb
 \hspace*{-0.1in}
 \scalebox{1.}
 {\includegraphics[width=\textwidth]{./figs/chapter3/f7alt.pdf}}
-\caption{Two dimensional histograms of efficiency. {\it Left:} Efficiency as a function of $i$-band magnitude and $i-z$ color. There is a clear dependence of depth on color, due to the design of our observations. {\it Middle:} Efficiency as a function of $i$-band magnitude and source fading. There is a sharp decline in efficiency for injected sources with a fading of $\lesssim 1$ mag between the search and template images, but otherwise our efficiency is constant above this value. {\it Bottom:} Efficiency as a function of $i-z$ color and source contrast. Our highest efficiency is for sources with red $i-z$ colors and large contrast, the properties expected for red kilonovae.}
+\caption{\singlespace Two dimensional histograms of efficiency. {\it Left:} Efficiency as a function of $i$-band magnitude and $i-z$ color. There is a clear dependence of depth on color, due to the design of our observations. {\it Middle:} Efficiency as a function of $i$-band magnitude and source fading. There is a sharp decline in efficiency for injected sources with a fading of $\lesssim 1$ mag between the search and template images, but otherwise our efficiency is constant above this value. {\it Bottom:} Efficiency as a function of $i-z$ color and source contrast. Our highest efficiency is for sources with red $i-z$ colors and large contrast, the properties expected for red kilonovae.}
 \label{fig:ch3_eff_2D}
 \end{center}
 \end{figure}
@@ -443,7 +445,7 @@ We now combine the results of \cref{sec:ch3_search,sec:ch3_fakes} to compute the
 \hspace*{-0.1in}
 \scalebox{1.}
 {\includegraphics[width=0.9\textwidth]{./figs/chapter3/f8.pdf}}
-\caption{Histogram of contaminant numbers and areal rates as a function of $i-z$ color. The blue lines indicate the raw source counts, while the orange line indicates the efficiency-corrected counts. The error bars represent the $1\sigma$ confidence interval as computed assuming Poisson counting statistics.}
+\caption{\singlespace Histogram of contaminant numbers and areal rates as a function of $i-z$ color. The blue lines indicate the raw source counts, while the orange line indicates the efficiency-corrected counts. The error bars represent the $1\sigma$ confidence interval as computed assuming Poisson counting statistics.}
 \label{fig:ch3_color_dist_corr}
 \end{center}
 \end{figure}
@@ -456,6 +458,8 @@ For the blue kilonova contaminants all 10 sources are above the magnitude limit.
 We compare the contamination rates derived from our search to those from several follow-up observations of GW sources from the first aLIGO observing run. We focus on optical follow-up using wide-field instruments for GW150914 and
 GW151226. Specifically, we use the published results from observations with DECam (\citealt{GW150914DECam,Cowp+16}), the intermediate Palomar Transient Factory (\citealt{Kasliwal+16}), the Kiso Wide-Field Camera (KWFC) used as part of the J-GEMs collaboration (\citealt{Morokuma+16,Yoshida+17}), and the Pan-STARRS/PESSTO/ATLAS search \citep{GW150914PS1,GW151226PS1}. The parameters and results of these searches are summarized in \cref{tab:ch3_O1_sum}.
 
+\begin{landscape}
+\singlespace
 \begin{deluxetable}{c | c c c c | c c c c | c}
 \tabletypesize{\footnotesize}
 \tablecolumns{10}
@@ -503,6 +507,7 @@ the first aLIGO observing run \citep[O1;][]{LIGOGW150914FollowUp, LIGOGW150914Fo
 Note: Here we only consider the KWFC wide-field survey component of the J-GEM follow-up.}
 \tablenotetext{D }{~References: \cite{GW150914PS1,GW151226PS1}}
 \end{deluxetable}
+\end{landscape}
 
 It is important to note that the searches conducted in response to GW150914 and GW151226 were fundamentally different from our study, as well as from searches that would be required to detect actual kilonovae. These searches employed slow cadences ($\approx \rm few$ days), shallower depths, and did not use colors for source selection. Nevertheless, we can use the numbers of reported transients, which were all deemed unrelated to the GW event, as a proxy for the contamination rate.
 

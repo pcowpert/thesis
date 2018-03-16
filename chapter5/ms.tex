@@ -118,7 +118,7 @@ Gemini-South & FLAMINGOS-2 & $K_s$ & 15.447 & $20.13 \pm 0.25$ \\
 Gemini-South & FLAMINGOS-2 & $K_s$ & 16.446 & $20.43 \pm 0.30$ \\
 Gemini-South & FLAMINGOS-2 & $K_s$ & 18.450 & $20.84 \pm 0.26$ \\
 \enddata
-\tablecomments{Summary of photometry from \cref{sec:ch2_observations}. Dates are give in days relative to the time of the GW trigger (MJD = 57982.529). Photometry {\it is not} corrected for extinction. Limits are given at the $3\sigma$ level. Error bars are given at the $1\sigma$ level.}
+\tablecomments{Summary of photometry from \cref{sec:ch5_observations}. Dates are give in days relative to the time of the GW trigger (MJD = 57982.529). Photometry {\it is not} corrected for extinction. Limits are given at the $3\sigma$ level. Error bars are given at the $1\sigma$ level.}
 \end{deluxetable}
 \doublespace
 
@@ -146,7 +146,7 @@ Our UV/optical/NIR light curves are shown in \Cref{fig:ch5_lc_good}. The data sp
 \begin{figure}[!t]
 \begin{center}
 \includegraphics[width=\textwidth]{./figs/chapter5/DECam_lc_alt.pdf}
-\caption{UV, optical, and NIR Light curves of the counterpart of GW170817. The two-component model for $r$-process heating and opacities (\cref{sec:ch5_models}) is shown as solid lines. The right panels focus on the $g$ (top), $i$ (middle), and $H$-band photometry (bottom), over the first 10 nights. Triangles represent 3$\sigma$ upper limits. Error bars are given at the $1\sigma$ level in all panels, but may be smaller than the points.}
+\caption{\singlespace UV, optical, and NIR Light curves of the counterpart of GW170817. The two-component model for $r$-process heating and opacities (\cref{sec:ch5_models}) is shown as solid lines. The right panels focus on the $g$ (top), $i$ (middle), and $H$-band photometry (bottom), over the first 10 nights. Triangles represent 3$\sigma$ upper limits. Error bars are given at the $1\sigma$ level in all panels, but may be smaller than the points.}
 \label{fig:ch5_lc_good}
 \end{center}
 \end{figure}
@@ -158,7 +158,7 @@ We find a similar rapid evolution in the colors of the transient (\Cref{fig:ch5_
 \begin{figure}[!t]
 \begin{center}
 \includegraphics[width=0.55\textwidth]{./figs/chapter5/sed_col_bol_alt.pdf}
-\caption{\singlespace{\it Top:} Optical colors from DECam observations as a function of time.  We observed rapid and early reddening in $g-r$ compared to the relatively flat but red $i-z$ colors. Also shown are template Ia SN colors relative to explosion for comparison \citep{Nugent+02}. {\it Middle:} SEDs at four representative epochs (assuming isotropic emission). The transition from a blue dominated spectrum at early times to a spectrum dominated by a red component at late times is clearly visible. {\it Bottom:} Bolometric light curve spanning $ugrizYH$. Expected values for $r$-process heating from \cite{Metzger+10} are shown for comparison, indicating that the observed emission requires ${\rm few}\times 10^{-2}$ M$_\odot$ of $r$-process ejecta. Error bars are given at the $1\sigma$ level in all panels, but may be smaller than the points.}
+\caption{\singlespace \singlespace{\it Top:} Optical colors from DECam observations as a function of time.  We observed rapid and early reddening in $g-r$ compared to the relatively flat but red $i-z$ colors. Also shown are template Ia SN colors relative to explosion for comparison \citep{Nugent+02}. {\it Middle:} SEDs at four representative epochs (assuming isotropic emission). The transition from a blue dominated spectrum at early times to a spectrum dominated by a red component at late times is clearly visible. {\it Bottom:} Bolometric light curve spanning $ugrizYH$. Expected values for $r$-process heating from \cite{Metzger+10} are shown for comparison, indicating that the observed emission requires ${\rm few}\times 10^{-2}$ M$_\odot$ of $r$-process ejecta. Error bars are given at the $1\sigma$ level in all panels, but may be smaller than the points.}
 \label{fig:ch5_sed}
 \end{center}
 \end{figure}
@@ -188,6 +188,9 @@ We test the conjecture that the UV/optical/NIR transient is an $r$-process kilon
 
 We use {\tt MOSFiT}\footnote{\url{https://github.com/guillochon/MOSFiT}} \citep{Guillochon+17b,Nicholl+17b}, an open source light curve fitting tool that utilizes a Markov Chain Monte Carlo (MCMC) to sample the model posterior. For each model, we ensure convergence by enforcing a Gelman-Rubin statistic $<1.1$ \citep{GelmanRubin92}.  We compare models using the Watanabe-Akaike Information Criteria (WAIC, \citealt{Watanabe2010,Gelman+14}), which accounts for both the likelihood score and number of fitted parameters. The best fit parameters, uncertainties, and WAIC scores for each model are provided in \cref{tab:ch5_KN}.
 
+\begin{landscape}
+\resizebox{!}{\lineheight}{%
+\singlespace
 \begin{deluxetable}{cccccccccccc}
 \tabletypesize{\footnotesize}
 \tablecolumns{12}
@@ -230,7 +233,8 @@ Red & - & - & - & - & - & - & $0.026^{+0.010}_{-0.008}$ & $0.271^{+0.008}_{-0.00
 1-Comp & - & - & - & $0.040^{+0.002}_{-0.007}$ & $0.274^{+0.007}_{-0.093}$ & $0.817^{+0.146}_{-0.135}$  & - & - & - & - &  11
 \enddata
 \tablecomments{Model parameters and WAIC scores. Numbers in parentheses indicate fixed parameters of the model. The errors represent the 1$\sigma$ confidence interval. Both the 2-component (``2-Comp'') and 3-component (``3-Comp'') models have significantly smaller WAIC scores (indicating better fits) compared to the four single-component models. }
-\end{deluxetable}
+\end{deluxetable}}
+\end{landscape}
 
 We first attempt a simple supernova model, namely heating by the radioactive decay of $^{56}$Ni and Fe-peak opacity of $\kappa = 0.1$ cm$^{2}$ g$^{-1}$ (see \citealt{Villar+17a}).  The model parameters are the ejecta mass and velocity, and the $^{56}$Ni mass fraction in the ejecta (as well as the temperature floor and scatter).  The best-fit model has $M_{\rm ej}\approx 0.01$ M$_\odot$, $v_{\rm ej}\approx 0.26$c, and $f^{\rm Ni}\approx 0.75$.  The parameters are comparable to those we inferred from black body fits to the flux and SEDs in the previous section, but the overall fit is poor.  In particular, this model severely underestimates the NIR light curves, while the high $^{56}$Ni fraction is inconsistent with the optical spectra \citep{Nicholl+17a}.  We therefore conclude that the transient is not powered by the radioactive decay of $^{56}$Ni.
 
@@ -241,7 +245,7 @@ We next turn to $r$-process heating, using the model outlined in \citet{Metzger2
 \hspace*{-0.1in}
 \scalebox{1.}
 {\includegraphics[width=0.9\textwidth]{./figs/chapter5/lc_failed_alt.pdf}}
-\caption{{\it Top Left:} Fitting the data with a Type I b/c SN model powered by the radioactive decay of $^{56}$Ni. This model clearly fails to capture the late time NIR behavior and requires an unphysically large fraction of the ejecta to be synthesized into nickel (\apx75\%). {\it Top Right:} Fitting the data with a single component ``blue'' KN model. Like the SN model, this fit is unable to capture the late time NIR behavior and overall spectra shape. {\it Bottom Left:} Fitting the data with a single component ``red'' KN model. This model clearly fails to capture any of the observed behavior. {\it Bottom Right:} Fitting the data with a single-component KN model with the opacity as a free parameter. Again, this model fails to capture the late time NIR behavior. This is suggestive of the fact that we need to model multiple ejecta components simultaneously. Error bars are given at the $1\sigma$ level in all panels, but may be smaller than the points.}
+\caption{\singlespace {\it Top Left:} Fitting the data with a Type I b/c SN model powered by the radioactive decay of $^{56}$Ni. This model clearly fails to capture the late time NIR behavior and requires an unphysically large fraction of the ejecta to be synthesized into nickel (\apx75\%). {\it Top Right:} Fitting the data with a single component ``blue'' KN model. Like the SN model, this fit is unable to capture the late time NIR behavior and overall spectra shape. {\it Bottom Left:} Fitting the data with a single component ``red'' KN model. This model clearly fails to capture any of the observed behavior. {\it Bottom Right:} Fitting the data with a single-component KN model with the opacity as a free parameter. Again, this model fails to capture the late time NIR behavior. This is suggestive of the fact that we need to model multiple ejecta components simultaneously. Error bars are given at the $1\sigma$ level in all panels, but may be smaller than the points.}
 \label{fig:ch5_lc_failed}
 \end{center}
 \end{figure}
