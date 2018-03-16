@@ -189,9 +189,9 @@ We test the conjecture that the UV/optical/NIR transient is an $r$-process kilon
 We use {\tt MOSFiT}\footnote{\url{https://github.com/guillochon/MOSFiT}} \citep{Guillochon+17b,Nicholl+17b}, an open source light curve fitting tool that utilizes a Markov Chain Monte Carlo (MCMC) to sample the model posterior. For each model, we ensure convergence by enforcing a Gelman-Rubin statistic $<1.1$ \citep{GelmanRubin92}.  We compare models using the Watanabe-Akaike Information Criteria (WAIC, \citealt{Watanabe2010,Gelman+14}), which accounts for both the likelihood score and number of fitted parameters. The best fit parameters, uncertainties, and WAIC scores for each model are provided in \cref{tab:ch5_KN}.
 
 \begin{landscape}
-\resizebox{!}{\lineheight}{%
 \singlespace
 \begin{deluxetable}{cccccccccccc}
+
 \tabletypesize{\footnotesize}
 \tablecolumns{12}
 \tablewidth{0pt}
@@ -233,7 +233,7 @@ Red & - & - & - & - & - & - & $0.026^{+0.010}_{-0.008}$ & $0.271^{+0.008}_{-0.00
 1-Comp & - & - & - & $0.040^{+0.002}_{-0.007}$ & $0.274^{+0.007}_{-0.093}$ & $0.817^{+0.146}_{-0.135}$  & - & - & - & - &  11
 \enddata
 \tablecomments{Model parameters and WAIC scores. Numbers in parentheses indicate fixed parameters of the model. The errors represent the 1$\sigma$ confidence interval. Both the 2-component (``2-Comp'') and 3-component (``3-Comp'') models have significantly smaller WAIC scores (indicating better fits) compared to the four single-component models. }
-\end{deluxetable}}
+\end{deluxetable}
 \end{landscape}
 
 We first attempt a simple supernova model, namely heating by the radioactive decay of $^{56}$Ni and Fe-peak opacity of $\kappa = 0.1$ cm$^{2}$ g$^{-1}$ (see \citealt{Villar+17a}).  The model parameters are the ejecta mass and velocity, and the $^{56}$Ni mass fraction in the ejecta (as well as the temperature floor and scatter).  The best-fit model has $M_{\rm ej}\approx 0.01$ M$_\odot$, $v_{\rm ej}\approx 0.26$c, and $f^{\rm Ni}\approx 0.75$.  The parameters are comparable to those we inferred from black body fits to the flux and SEDs in the previous section, but the overall fit is poor.  In particular, this model severely underestimates the NIR light curves, while the high $^{56}$Ni fraction is inconsistent with the optical spectra \citep{Nicholl+17a}.  We therefore conclude that the transient is not powered by the radioactive decay of $^{56}$Ni.
