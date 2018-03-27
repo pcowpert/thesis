@@ -19,16 +19,54 @@ This work is organized as follows: In \cref{sec:ch6_models} we describe the expa
 
 All magnitudes presented in this work are given in the AB system unless otherwise noted. Cosmological calculations are performed using the cosmological parameters $H_0 = 67.7$ km s$^{-1}$ Mpc$^{-1}$, $\Omega_M = 0.307$, and $\Omega_{\Lambda} = 0.691$ \citep{Planck2016}.
 
+\clearpage
 \section{Kilonova Models}
 \label{sec:ch6_models}
-Brief description of model construction + cite previous papers.
+A kilonova is an isotropic optical/NIR thermal transient produced by the merger of a compact object binary containing at least one neutron star such as a neutron star-neutron star binary (NS-NS or BNS) or neutron star-black hole binary (NS-BH). In either scenario, the merger produces a small amount of ejecta ($\Mej \lesssim 0.1 \msun$), which is typically neutron-rich. As the ejecta expands from nuclear densities, it will synthesize heavy elements via $r$-process nucleosynthesis. These heavy nuclei are unstable and will then decay back to stability. This decay will deposit energy into the ejecta powering the kilonova emission \citep{LP98,Metzger+10,BarnesKasen13,TanakaHotokezaka13,Metzger2017}.
 
-Describe actual models produced
+The exact nature of this kilonova emission depends strongly on the composition of the ejecta, specifically the neutron-richness which is parametrized by the electron fraction ($Y_e$). If the material is very neutron-rich ($Y_e \lesssim 0.3$), then the ejecta will undergo strong $r$-process nucleosynthesis, producing very heavy elements ($A > 140$), particularly those in the lanthanide and actinide series. As a result of these heavy elements, the ejecta will have a high opacity $(\kappa \gtrsim 10 \cspg)$. The resulting ``red" kilonova will then be faint with a peak luminosity of $L_p \apx 10^{40}-10^{41} \ergs$, red ($i-z \gtrsim 0$), and exhibit a timescale of $t_p \apx 1$ week \citep{BarnesKasen13,TanakaHotokezaka13}. If instead the material is less neutron-rich ($Y_e \gtrsim 0.3$), then the ejecta will undergo light $r$-process nucleosynthesis, producing Fe-group and light $r$-process elements ($A \lesssim 140$), and the ejecta will have a lower opacity $(\kappa \apx 0.1 \cspg)$. The resulting ``blue" kilonova will be brighter $L_p \apx 10^{41}-10^{42} \ergs$, bluer ($i-z \lesssim 0$), and exhibit a shorter timescale of $t_p \apx 1$ day \citep{Metzger+10,MetzgerFernandez14}.
 
-Describe construction of red + blue models.
+In practice, the observed kilonova will exhibit some combination of both ``red" and ``blue" features. This behavior was seen in the kilonova associated with GW170817, where the multi-band optical/NIR light curve was best described by a three-component model consisting of ``red"  $(\kappa \apx10 \cspg)$, ``purple"  $(\kappa \apx 3 \cspg)$, and "blue"  $(\kappa \apx 0.1 \cspg)$ $r$-process powered components. This three-component approach was first suggested by \citet{Tanaka+17} as a good approximation to the more complex opacity behavior seen in detailed radiative transport simulations. The three-component approach is also physically motivated as the different emission components may arise from different sources of ejecta present in the merger. The ``blue`` emission may arise from neutron-poor ejecta in the polar region where material is shock-heated during the NS collision \citep{Oechslin+07,Bauswein+13a,Sekiguchi+16} or if the ejecta is irradiated by neutrinos from a long-lived merger remnant \citep{FernandezMetzger13,Just+15,Kasen+15}. The ``purple" and ``red" emission may arise from ejecta produced in the tidal tails during merger \cite{Rosswog+99,Hotokezaka+13} or wind outflows from a post-merger accretion disk \citep{Just+15,SiegelMetzger17}. However, it is currently unknown if the behavior observed in the multi-band light curves of GW170817 will be seen for all kilonovae. For example, if the ``blue" emission is indeed constrained to the polar regions of the ejecta then it will not be observable at all viewing angles, whereas the more isotropic ``red" emission from tidal tails or post-merger disks will be ubiquitous in observations.
 
-Describe Usage of GW170817
+We explore this potential diversity in kilonovae emission by producing a grid of models that cover a range of ejecta parameters. We generate synthetic spectral energy densities (SEDs) for kilonovae spanning $2-15$ \micron\ using the {\tt rprocess} model built-in to the \mosfit\ light curve fitting package \citep{Guillochon+17b,Nicholl+17b}. The {\tt rprocess} model is discussed in \citet{Villar+17a} and describes a single-component kilonovae \citep{Metzger2017} parametrized by the ejecta mass ($\Mej$), velocity ($\vej$), and opacity ($\kappa$). We produce models at the extremes of the mass grid outlined in Table 1 of \citet{Barnes+16} with $\Mej = [0.001, 0.05]\,\msun$. For each choice of ejecta mass, we produce both ``red" $(\kappa \apx 10 \cspg)$ and ``blue" $(\kappa \apx 0.1 \cspg)$ models. Lastly, we fix $\vej$ at 0.3c for the ``blue" kilonova and 0.1c for the ``red" kilonova. We combine permutations of these SEDs to produce a final set of four models that cover a wide dynamic range in both brightness and color. These models are presented in \cref{tab:ch6_models}.
 
+\begin{deluxetable}{cccccccc}
+\singlespace
+\tabletypesize{\footnotesize}
+\tablecolumns{12}
+\tablewidth{0pt}
+\tablecaption{Model Kilonova SED Parameters
+	          \label{tab:ch6_models}}
+\tablehead{
+\colhead{Model} &
+\colhead{Name} &
+\colhead{$\Mej^{\rm blue}$} &
+\colhead{$\vej^{\rm blue}$} &
+\colhead{$\kappa^{\rm blue}$} &
+\colhead{$\Mej^{\rm red}$} &
+\colhead{$\vej^{\rm red}$} &
+\colhead{$\kappa^{\rm red}$} \\
+\colhead{} &
+\colhead{} &
+\colhead{($\msun$)} &
+\colhead{(c)} &
+\colhead{($\cspg$)} &
+\colhead{($\msun$)} &
+\colhead{(c)} &
+\colhead{($\cspg$)} 
+}
+\startdata
+1 & {\tt h\_blue\_h\_red} & 0.05 & 0.3 & 0.1 & 0.05 & 0.1 & 10 \\
+2 & {\tt h\_blue\_l\_red} & 0.05 & 0.3 & 0.1& 0.001 & 0.1 & 10 \\
+3 & {\tt l\_blue\_h\_red} & 0.001 & 0.3 & 0.1& 0.05 & 0.1 & 10 \\
+4 & {\tt l\_blue\_l\_red} & 0.001 & 0.3 & 0.1& 0.001 & 0.1 & 10 \\
+\enddata
+\tablecomments{Model parameters for the four synthetic kilonovae SEDs produced using the {\tt rprocess} model in \mosfit\ \citep{Guillochon+17b,Nicholl+17b,Villar+17a}. The individual SED components are produced as described in \cref{sec:ch6_models} and then coadded in luminosity space to produce the final ``red+blue" kilonovae.}
+\end{deluxetable}
+
+The four kilonova models described above represent the possible extremes of kilonovae behavior. Constructing models for intermediate cases is more difficult. The exact nature of the combined ``red" and ``blue" components depends strongly on assumptions such as the geometry and velocity structure of the ejecta or possible mixing between ejecta components. We instead use GW170817 as an empirical representation of a kilonova observed with blended ``red" and ``blue" features. We generate model SEDs for GW170817, over the same wavelength range as our fiducial models, with \mosfit\ using the best-fit parameters from the three-component model of \citep{Villar+17b}. These five models will form the basis of sources injected into our simulated observations.
+
+\clearpage
 \section{Simulated Observations}
 \label{sec:ch6_obs}
 

@@ -32,7 +32,7 @@
 \usepackage{fltpage}
 \usepackage{url}
 \usepackage{rotating}
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks,colorlinks]{hyperref}
 \usepackage[innercaption]{sidecap}
 \usepackage{pdfpages}
 \usepackage{xspace}
@@ -51,6 +51,11 @@
 \lfoot{}
 \rfoot{}
 \renewcommand{\headrulewidth}{0.0pt}
+
+% Make ref links blue
+\hypersetup{
+    allcolors = {blue},
+}
 
 %\usepackage{apjfonts}
 
@@ -204,7 +209,7 @@ Page left intentionally blank.
 % I changed  thebibliography  in hvdthesis.cls, so that it generates
 % a ToC entry, and is headed References instead of Bibliography.  -HJC
 \singlespace
-\bibliographystyle{apj}
+\bibliographystyle{yahapj}
 \bibliography{references}
 
 \end{document}
