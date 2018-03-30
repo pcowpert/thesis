@@ -72,59 +72,102 @@ The four kilonova models described above represent the possible extremes of kilo
 
 In this work, we consider the detectability and characterization of kilonovae in two unique observing situations. The first is the serendipitous detection of kilonovae in the LSST main survey independent of a GW trigger from LIGO. The second is triggered target-of-opportunity observations conducted by LSST in response to a GW trigger. We generate simulated observations for both scenarios as follows: 
 
-\subsection{OpsSim}
-\label{sec:ch6_opssim}
-Describe opssim
+\subsection{Main Cadence Simulations With OpSim}
+\label{sec:ch6_opsim}
+We produce simulated observations of kilonovae in the LSST main cadence using the LSST Operations Simulator \citep[OpSim,][]{OpSim1,OpSim2}. This is a publicly available package designed to produce realistic simulations of LSST scheduling and imaging over the ten year duration of the survey. These simulations provide realistic information about observations including cadence and science program requirements, observing conditions due to telescope or environmental factors, and image characteristics. We use the most recent OpSim reference run ({\tt minion\_1016}) to produce a catalog of observations including times, sky position (RA,DEC), photometric errors, and limiting magnitudes.
 
-Our Setup
+We inject our kilonova model into this database of observations. For each injection, we uniformly choose a random model from the five described in \cref{sec:ch6_models}. The chosen model is injected at a randomly selected sky position and time, chosen uniformly. The model is injected at a random  
+distance over a volume defined by the maximal LIGO BNS detection radius $(\apx 450$ Mpc) in distance bins of 50~Mpc. Since it is not guaranteed that LSST with be looking at the chosen position and time where the source is injected, we continually inject sources until we have 100 kilonovae in each distance bin. This method allows more robust statistics at lower statistics compared to a volume-weighted injection scheme and allows us to compute LSST all-sky efficiencies and determine the total number of expected transients detected during the survey (see \cref{sec:ch6_opsim_results}).
 
-\subsection{SNANA/ToO}
+\subsection{Target of Opportunity Simulations With SNANA}
 \label{sec:ch6_snana}
-Describe SNANA and our set up
+We parametrize our triggered target-of-opportunity (ToO) strategies based on the expected time investment per night and total number of nights spent observing. In this work we assume that the typical LIGO localization region is \apx10~deg$^2$ and can therefore be observed in just two LSST pointings, which are necessary to cover chip gaps in the CCD mosaic. We assume that each pointing consists of $grizY$ observations lasting 30~s each with per filter overheads of 90~s. This puts the total time investment at 10 minutes per pointing, or 20 minutes per night. We assume 7 nights of observing for a total telescope time investment of \apx2.5~hours. To test the effect of rapid cadence observations, we include a second epoch on the first night, taken 3 hours after the initial epoch.
 
-Outline ToO strategies and considerations
+We simulate these ToO observations using the SNANA public software package \citep{SNANA}. SNANA is a supernova analysis and simulation package designed to produce realistic supernovae light curves for the optimization of time-domain surveys and extraction of cosmological parameters. SNANA generates these light curves using a model transient SED, realistic filter transmission functions, and a database of observation dates and conditions. We run SNANA using our kilonova model SEDs and LSST filter transmission functions. We generate the database of observing conditions by pulling key information from the OpSim database (e.g., sky noise, PSF, observed zero point, see \cref{sec:ch6_opsim}). We then mutate the observing dates to match those required for our ToO cadence described above.
+
+We inject kilonova following the same procedure outlined in \cref{sec:ch6_opsim} with several key differences. First, we do not inject sources at randon sky locations, but instead at the location LSST is observing in the SNANA database. Second, in order to probe a realistic range of response times for the ToO trigger, we inject kilonova at a uniformly sampled time from 2-24 hours prior to the first epoch. Lastly, SNANA randomly selects an injection distance using a volume-weighted scheme to generate a realistic distribution. We therefore, inject 10,000 kilonovae across the entire volume ($D_L \apx 450$~Mpc) to ensure that we have enough nearby sources to compute reasonable statistics. These 10,000 sources will serve at the basis for our analysis.
 
 \section{Analysis}
 \label{sec:ch6_analysis}
 Describe analysis goals. Detection and characterization of KN. 
 
-\subsection{OpsSim Results}
-\label{sec:ch6_opssim_results}
+\subsection{Results from OpSim}
+\label{sec:ch6_opsim_results}
 Detection and detection criteria. Including "rise" and "color"
 
 General interpretation and models detected. Bright models are good. Faint models are bad. 
 
 Don't always get crucial rise or color information
 
-BIG HISTOGRAM PLOT 1
+\begin{figure}[!t]
+\begin{center}
+\hspace*{-0.1in}
+\scalebox{1.}
+{\includegraphics[width=0.7\textwidth]{./figs/chapter6/f1.pdf}}
+\caption{\singlespace Histograms showing the number of detections as a function of model and distance, for those models that are detected. We note that as a result of the cadence of the LSST main survey we are not always able to obtain crucial information about the rise and color.}
+\label{fig:ch6_eff_hist}
+\end{center}
+\end{figure}
 
 Numbers of each value. Discuss plot.
 
 Timing of detections and ability to detect early and late
 
-BIG HISTOGRAM PLOT OF TIMES
+\begin{figure}[!t]
+\begin{center}
+\hspace*{-0.1in}
+\scalebox{1.}
+{\includegraphics[width=0.7\textwidth]{./figs/chapter6/f2.pdf}}
+\caption{\singlespace Histogram of events as a function of time to first or last detection. As with \Cref{fig:ch6_eff_hist}, we only plot those models that are detected. The LSST main cadence is only able to track a limited number of events out to longer times than \apx~a few days. This combined with the poor rise and color constraints shown in \Cref{fig:ch6_eff_hist} means that kilonovae detected in the LSST main survey will be difficult to detect and characterize.}
+\label{fig:ch6_t_hist}
+\end{center}
+\end{figure}
 
-Efficiencies
+Efficiencies. Discuss plot.
 
-PLOT OF EFFICIENCIES?!
+\begin{figure}[!t]
+\begin{center}
+\hspace*{-0.1in}
+\scalebox{1.}
+{\includegraphics[width=0.9\textwidth]{./figs/chapter6/f3.pdf}}
+\caption{\singlespace Detection efficiency as a function of distance for each of the detected models. As expected, the efficiency is high (\apx 60\%) for nearby sources ($D_L \apx 50$~Mpc), but rapidly tapers off to \apx10\% at the edge of the LIGO BNS detection range $(D_L \gtrsim 400$~Mpc).}
+\label{fig:ch6_dist_eff}
+\end{center}
+\end{figure}
 
 Expected rate and calculation
 
 Implications
 
-\subsection{ToO Results}
+\subsection{Results from SNANA}
 \label{sec:ch6_too_results}
 Criteria same as used on LC from OpSim.
 
 Same issue with models not being detected in standard 30s exposures. 
 
-eff plot
+\begin{figure}[!t]
+\begin{center}
+\hspace*{-0.1in}
+\scalebox{1.}
+{\includegraphics[width=0.9\textwidth]{./figs/chapter6/f5.pdf}}
+\caption{\singlespace Efficiency of our ToO searches as a function of distance. The numbers plotted here are relative to the total number of injected sources (i.e., including models not detected). The {\it per model} detection efficiency is 100\% for the bright KN models plotted. The efficiency curve is flat as a function of distance indicating that ToO efforts with LSST can be effective out to the maximal LIGO BNS detection distance.}
+\label{fig:ch6_dist_eff}
+\end{center}
+\end{figure}
 
 Discuss plot. Stress that this is relative to all models injected. Efficiency for the bright models is 100\%. 0\% for faint models.
 
 Effect of Start Time
 
-t_start plot
+\begin{figure}[!t]
+\begin{center}
+\hspace*{-0.1in}
+\scalebox{1.}
+{\includegraphics[width=0.9\textwidth]{./figs/chapter6/f6.pdf}}
+\caption{\singlespace Efficiency of our ToO searches to detect brightening in the kilonova light curve in at least one filter as a function of starting time. The efficiency here is computed relative to the number of detected sources in a given time bin. There is a sharp drop off in efficiency after just a few hours. This efficiency drops to 0 under all observing scenarios when just a single epoch is obtained on the first night.}
+\label{fig:ch6_dist_eff}
+\end{center}
+\end{figure}
 
 discuss plot. No effect on detection or ability to detect rise. 
 
