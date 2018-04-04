@@ -7,34 +7,62 @@ In this chapter, we present an introduction to the growing field of joint GW-EM 
 
 \section{Gravitational Waves}
 \label{sec:intro_gw}
-The existence of gravitational waves (GW) was first investigated by Einstein shortly after he introduced the world to his general theory of relativity \citep{Einstein1916}. Gravitational waves are ripples in both space and time that propagate through the universe at the speed of light, carrying with them energy, momentum, and most importantly information about their progenitors. Mathematically, gravitational waves are most simply thought of as a small perturbation to a flat metric \citep[$g_{\mu\nu}$; ][]{Misner+73,Carroll2004}:
+The existence of gravitational waves (GW) was first investigated by Einstein shortly after he introduced the world to his general theory of relativity \citep{Einstein1915,Einstein1916,Einstein1918}. Gravitational waves are ripples in both space and time that propagate through the universe at the speed of light, carrying with them energy, momentum, and most importantly information about their progenitors. Mathematically, gravitational waves are most simply thought of as a small perturbation to a flat metric \citep[$g_{\mu\nu}$; ][]{Misner+73,Carroll2004}:
 \begin{equation}
 \label{eq:intro_metric}
-g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}, \quad ||h|| \ll 1
+g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}, \quad |h| \ll 1
 \end{equation}
-\noindent where $\eta_{\mu\nu}$ is the flat Minkowski spacetime given by $\eta_{\mu\nu} = {\rm diag}(-1, 1,1,1)$ and $h_{\mu\nu}$ is called the spacetime {\em strain} and can be loosely thought of as the amplitude of the gravitational wave. This linearized approach leads to a solution representing gravitational plane waves \citep[see e.g.,][and references therein]{Misner+73,Carroll2004}.
+\noindent where $\eta_{\mu\nu}$ is the flat Minkowski spacetime given by $\eta_{\mu\nu} = {\rm diag}(-1, 1,1,1)$ and $h_{\mu\nu}$ is called the spacetime {\em strain} which can be loosely thought of as the amplitude of the gravitational wave. This linearized approach leads to a solution representing gravitational plane waves \citep[see e.g.,][and references therein]{Misner+73,Carroll2004}.
 
-While discussions of this plane wave solution and the detailed nature of gravitational waves are beyond the scope of this thesis, there are several important physical aspects of gravitational waves worth mentioning. Linear/Angular momentum -> quadrupole emission (equation). 
+While discussions of this plane wave solution and the detailed nature of gravitational wave radiation are beyond the scope of this thesis, there are several important physical aspects worth mentioning. First, in contrast to electromagnetic waves which radiate as a dipole, conservation of linear and angular momentum require that gravitational waves radiate in a quadrupole fashion \citep[see e.g.,][and references therein]{Centrella+10}. The nature of this quadripolar emission is often expressed using two orthogonal polarizations: $h_{+}$ which represents linear polarization and $h_{\times}$ which is oriented 45\degr~relative to $h_{+}$. This also suggests that sources which produce gravitational waves must have an accelerating quadrupole moment, analogous to an accelerating dipole moment. The resulting strain  from such an acceleration is given by \citep{Centrella+10}:
+\begin{equation}
+\label{eq:intro_quad}
+h \apx \frac{G}{c^4} \frac{\ddot{Q}}{r}
+\end{equation}
+\noindent where $Q$ is the quadrupole moment of the source and $r$ is the distance to the source. \Cref{eq:intro_quad} also points to our second important point about the behavior of gravitational waves which is that the strain decreases as~$h \apx r^{-1}$. These two physical properties have important implications for astrophysical sources of interest (\cref{sec:intro_gw_source}) and the design of gravitational wave detections (\cref{sec:intro_gw_det}). 
 
-\subsection{GW Sources}
+\subsection{Gravitational Wave Sources}
 \label{sec:intro_gw_source}
-EM Radiation is accelerating charges. GW is accelerating mass. Small strain scales mean that we have to consider drastic accelerations of a lot of mass
+Much like EM radiation arises from the acceleration of charged particles, gravitational radiation is the result of rapidly accelerating masses. This can be see by rewriting \Cref{eq:intro_quad} as \citep{Centrella+10}:
+\begin{equation}
+\label{eq:intro_quad}
+h \apx \frac{G}{r\,c^2} (M_{\rm quad} \beta^2)
+\end{equation}
+\noindent where $M_{\rm quad}$ is the accelerating mass and $\beta \equiv v / c$ is the velocity of the source. Given that the factor of $G / c^2$ is on the order of $\apx7\times10^{-29}$~cm~g$^{-1}$ indicates that the production of detectable gravitational wave sources requires large masses moving at relativistic speeds.
 
-Relevant to this thesis is compact object binary mergers. 1-2 paragraphs
+There are many potential sources of gravitational waves in the Universe \citep[see e.g,][]{CutlerThorne02} including: pulsars \citep{Hewish+68, Jaranowski+98}, asymmetries in core collapse supernovae \citep[SN,][]{Dimmelmeier+01,Ott+06,Ott2009}, or the effects of inflation in the very early universe \citep{Turner1997,Maggiore2000}. In the context of this thesis, the most interesting astrophysical source of is the inspiral and merger of compact object binaries \citep[see e.g.,][]{Belczynski+02,Blanchet2002,Blanchet2006}.
 
-\subsection{GW Detectors}
+Compact object binaries are binary systems comprised of some combination of neutron stars (NS) and/or black holes (BH). As these massive object orbit around each other they experience energy loss due to gravitational wave emission. Indirect evidence of this gravitational wave emission can be seen in radio observations of binary pulsar systems \citep{HulseTaylor75,Weisberg+05}. As the binary system loses energy, the separation decreases until eventually the binary components coalesce and merge. This final merger produces a large ``chirp" of gravitational waves followed by a ``ringdown" as the merger remnant stabilizes \citep{Centrella+10}. During the final seconds of this inspiral and merger, the system radiates gravitational waves with a luminosity of \citep{FaberRasio12}:
+\begin{equation}
+\label{eq:intro_gwlum}
+L_{\rm GW} \approx 8.7 \times 10^{51} q^2 (1+q) \left ( \frac{M_1}{1.4~\msun} \right )^5 \left ( \frac{a}{100~{\rm km}} \right )^{-5}
+\end{equation}
+\noindent where $M_1$ is the mass of the primary, $q$ is the binary mass ratio $q = M_2 / M_1$, and $a$ is the binary separation. Thus, for an equal mass ratio Binary Neutron Star (BNS, $M_1 = M_2 = 1.4~\msun$, $q = 1$) system separated by just 30~km (e.g., a few NS radii), the gravitational wave luminosity is an immense $L_{\rm GW} \apx 10^{54}$~erg~s$^{-1}$. A more relevant physical quantity for detection of the gravitational waves here on Earth is the amplitude of the strain, $h$, given by \citep{FaberRasio12}:
+\begin{equation}
+\label{eq:intro_gwh}
+h \approx 5.5 \times 10^{-23} q \left ( \frac{M_1}{1.4~\msun} \right )^2 \left ( \frac{a}{100~{\rm km}} \right )^{-1} \left ( \frac{r}{100~{\rm Mpc}} \right )^{-1}
+\end{equation}
+\noindent at a frequency of \citep{FaberRasio12}:
+\begin{equation}
+\label{eq:intro_gwf}
+f_{\rm GW} \approx 195 \left ( \frac{M}{2.8~\msun} \right )^{1/2} \left ( \frac{a}{100~{\rm km}} \right )^{-3/2}~{\rm Hz}
+\end{equation}
+\noindent where $r$ is the distance to the source. In the case of our BNS example above, at a distance of 100~Mpc, the expected strain amplitude is $h \apx 10^{-22}$ at a frequency of $f_{\rm GW} \apx 1200$~Hz. Therefore, while gravitational waves from close binaries can be some of the most luminous events in the Universe, the actual scale of the spacetime distortion is almost imperceptible.
+
+\subsection{Gravitational Wave Detectors}
 \label{sec:intro_gw_det}
-GW radiation is nice because it does not disperse but makes them hard to detect
+The small strain amplitude in calculated in \cref{sec:intro_gw_source} hints at the unique challenge involved in making a direct detection of gravitational waves. While a GW signal can propagate for vast distances through space with little dissipation, their very weak interaction with matter means that any detector must achieve previously unprecedented levels of sensitivity. The current best instruments for the detection of gravitational waves from the inspiral and merger of a compact object binary are large ground-based interferometers. The existing network of such detectors consists of the two Advanced Laser Interferometer Gravitational-Wave Observatory (LIGO) with sites in Hanford, Washington (H1) and Livingston Parish, Louisianna \citep[L1,][]{LIGOEarlyRef,LIGOMainRef}, the Virgo Interferometer in Italy \citep{VirgoC7Burst}, and the GEO600 interferometer in Germany \citep{GEOMainRef}. Future additions to this network include the KAGRA interferometer in Japan \citep{KAGRA}, and a new LIGO installation in Indian \citep[LIGO-India,][]{LIGOIndia}.
 
-A brief paragraph about the early bar measurements, HT Pulsar, focus on context of thesis
+All of these detectors are at their heart a specialized Michelson Interferometer. They operate by passing a highly stabilized laser through a beam splitter, causing the beam to pass down long ($4$~km for LIGO) orthogonal arms, bounce off mirrors functioning as test masses, and return to a photodiode. The system is tuned such that the lasers destructively interfere at the photodiode, produce no signal \citep[see e.g.,][and references therein]{LIGOMainRef,Adhikari2014}. As a gravitational wave passes through the detector, the lengths of the arms change causing a signal to appear on the photodiode. The detectors are consequently sensitive to a fractional change in length that is roughly proportional to the strain amplitude (e.g., $h \apx \Delta L / L$). For a sense of scale, the Advanced LIGO interferometer at design sensitivity will be able to detect strain amplitudes of $h \apx 10^{-22}$, or a change of length in the 4 km arms of just $\Delta L \apx 10^{-19}$ meters. This sensitivity is sufficient to detect the merger of a BNS at an average distance of $\apx 200$~Mpc or the merger of a more massive binary black hole (BBH) system out to a gigaparsec.
 
-1-2 paragraphs on ground-based detectors, functionality, and sensitivity 
+Despite the phenomenal sensitivity of any single detector, it is necessary that they operate in a collective network for several key reasons. The first, and most important reason, is coincident detection of signals. The extremely sensitive nature of these interferometers makes them highly susceptible to noise that can produce a false GW signal. Therefore, GW signals appearing in multiple instruments, separated by the light travel time between interferometer locations, provides a powerful constraint on the physical nature of detections. The second reason is that the wide antenna pattern of a single interferometer makes it difficult to determine the precise sky location of any GW source. In a network of two detectors, degenerate triangulation based on the GW arrival times combined with information about the GW polarization at each detector can produce sky localizations that are $\apx1000$ deg$^2$ in size \citep[see e.g.,][]{LIGOLocalization,ChenHolz16}. If a third detector is added, then the localization can be improved by an order of magnitude to just $\apx100$~deg$^2$, finally improving to just $\apx10$~deg$^2$ in the final five detector network \citep[see e.g.,][]{LIGOLocalization,ChenHolz16}.
+
 
 \section{Joint GW-EM Astronomy}
 \label{sec:intro_joint}
 Talk about why we want to do joint GW-EM astronomy. Can do a lot of cool physics with GW, but Gw-EM is better. What are the science gains and limitations of individual detections vs. Joint
 
-\subsection{EM Counterparts}
+\subsection{The Zoo of EM Counterparts}
 \label{sec:intro_counterparts}
 Important to understand the range of possible emission
 
