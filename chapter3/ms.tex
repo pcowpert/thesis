@@ -255,7 +255,6 @@ We are also interested in those candidates that have a coincident point source c
 
 To help assess if the point source counterpart in the template images is a long-lived transient or simply a stellar variable source, we perform catalog matching for these sources against the Two Micron All-Sky Survey Point Source Catalog (2MASS PSC, \citealt{Skrutskie+06}), the Wide-field Infrared Survey Explorer all-sky release (WISE, \citealt{Wright+10}), and the Gaia DR1 Stellar Catalog \citep{GAIAMainRef,GAIADR1}\footnote{\singlespace We note that Gaia DR1 uses data obtained after our data were obtained. However the time separation between the Gaia mission and our data ($> 1$ yr) along with the comparatively shallow Gaia catalogs (G $\sim$ 20 mag) makes it unlikely that any transient detected in our data will still be present in Gaia DR1.}. This matching is done using the detection coordinates from {\tt photpipe} with a matching radius of $1\arcsec$. This matching identifies 711 of the 725 candidates in Groups 3 and 4. In the following subsections we investigate the two groups separately.
 
-\clearpage
 \subsubsection{Group 3 -- Point Source Counterpart With a Bright Nearby Galaxy}
 \label{sec:ch3_group3}
 
@@ -278,7 +277,6 @@ We find 48 sources that can be considered as potential kilonova contaminants. Al
 
 We note that rejection of the 14 sources with point-source counterparts possessing stellar colors in the template images but lacking a catalog match in Groups 3 and 4 as potential kilonova candidates is made under the assumption of template images being available. However, in the context of real-time detection in the absence of pre-existing templates such sources may lead to an additional source of contamination. We do not include these sources in our contaminant sample, because they can ultimately be rejected, but we caution that the rate of contaminants may be up to $\approx 25\%$ higher if such sources cannot be efficiently rejected.
 
-\clearpage
 \subsection{Color Selection of Kilonova Contaminants}
 \label{sec:ch3_kn_search}
 We now study the $i-z$ colors of the 48 potential contaminants to identify sources that can mimic either red or blue kilonova emission. The color distribution for all 48 sources is shown in \Cref{fig:ch3_color_dist_final}. The $i-z$ color is computed as a signal-to-noise-weighted average using the ``forced" {\tt DoPhot} photometry from the difference images. We define red kilonova contaminants as those having $i-z \gtrsim 0.5$~mag \citep{BarnesKasen13,CowpBerger15}. For blue kilonova contaminants we require $i-z \lesssim 0.0$~mag, motivated by the models of \cite{Kasen+15} for a BNS merger that results in a HMNS with $t_{\rm HMNS}\gtrsim 100$ ms. These criteria are shown in \Cref{fig:ch3_color_dist_final}. These criteria capture the tails of the color distribution, with over half of the sources (27 of 48) exhibiting $i-z = 0.0-0.5$~mag.
@@ -458,6 +456,12 @@ For the blue kilonova contaminants all 10 sources are above the magnitude limit.
 We compare the contamination rates derived from our search to those from several follow-up observations of GW sources from the first aLIGO observing run. We focus on optical follow-up using wide-field instruments for GW150914 and
 GW151226. Specifically, we use the published results from observations with DECam (\citealt{GW150914DECam,Cowp+16}), the intermediate Palomar Transient Factory (\citealt{Kasliwal+16}), the Kiso Wide-Field Camera (KWFC) used as part of the J-GEMs collaboration (\citealt{Morokuma+16,Yoshida+17}), and the Pan-STARRS/PESSTO/ATLAS search \citep{GW150914PS1,GW151226PS1}. The parameters and results of these searches are summarized in \cref{tab:ch3_O1_sum}.
 
+It is important to note that the searches conducted in response to GW150914 and GW151226 were fundamentally different from our study, as well as from searches that would be required to detect actual kilonovae. These searches employed slow cadences ($\approx \rm few$ days), shallower depths, and did not use colors for source selection. Nevertheless, we can use the numbers of reported transients, which were all deemed unrelated to the GW event, as a proxy for the contamination rate.
+
+We find that our measured contaminant rate, for both red and blue sources, is higher than those reported during O1 follow-up, which had a typical rate of  $\lesssim 0.1$ deg$^{-2}$. However direct comparison requires careful consideration of selection criteria and depth. For example, the iPTF and KWFC follow-up of GW151226 both achieved comparable depth to each other and their reported contaminant rates are in good agreement. By comparison, the DECam and iPTF follow-up of GW150914, both observed the same contamination rate despite the DECam observations being significantly deeper. This is due to a difference in selection criteria as the DECam search focused only on finding rapidly declining transients.
+
+
+\clearpage
 \begin{landscape}
 \singlespace
 \begin{deluxetable}{c | c c c c | c c c c | c}
@@ -509,10 +513,6 @@ Note: Here we only consider the KWFC wide-field survey component of the J-GEM fo
 \end{deluxetable}
 \end{landscape}
 
-It is important to note that the searches conducted in response to GW150914 and GW151226 were fundamentally different from our study, as well as from searches that would be required to detect actual kilonovae. These searches employed slow cadences ($\approx \rm few$ days), shallower depths, and did not use colors for source selection. Nevertheless, we can use the numbers of reported transients, which were all deemed unrelated to the GW event, as a proxy for the contamination rate.
-
-We find that our measured contaminant rate, for both red and blue sources, is higher than those reported during O1 follow-up, which had a typical rate of  $\lesssim 0.1$ deg$^{-2}$. However direct comparison requires careful consideration of selection criteria and depth. For example, the iPTF and KWFC follow-up of GW151226 both achieved comparable depth to each other and their reported contaminant rates are in good agreement. By comparison, the DECam and iPTF follow-up of GW150914, both observed the same contamination rate despite the DECam observations being significantly deeper. This is due to a difference in selection criteria as the DECam search focused only on finding rapidly declining transients.
-
 It is critical to note that while our measured contamination rate is higher, the observations used in this work were conducted at the depths and cadences necessary for searches targeting kilonovae. Therefore, the rates derived here are more relevant for GW follow-up conducted in response to BNS and NS-BH mergers.
 
 \subsection{Rates for Short Timescale Transients}
@@ -535,7 +535,6 @@ We presented an empirical study of contamination rates in rapid, deep, wide-fiel
 
 \item We compute efficiency-corrected areal rates for contaminants (per GW follow-up search) at a limiting magnitude of $i\approx 22.5$ mag, of $\mathcal{R}_{\rm tot}\approx 1.79$ deg$^{-2}$, $\mathcal{R}_{\rm red}\approx 0.16$ deg$^{-2}$, and $\mathcal{R}_{\rm blue}\approx 0.80$ deg$^{-2}$. We compute an upper limit areal rate for sources with a characteristic timescale of $\lesssim 1$ day of $\lesssim 0.07$ deg$^{-2}$ at the 95\% confidence level.
 
-\clearpage
 \item Our derived contamination rates are higher than reported optical transients found in follow-up of GW150914 and GW151226 ($\mathcal{R} \approx 0.1$ deg$^2$), but this is due to the greater depth of our observations, which are better matched to kilonova detections (CB15).
 \end{enumerate}
 
